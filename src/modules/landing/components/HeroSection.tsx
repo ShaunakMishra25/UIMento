@@ -203,33 +203,21 @@ export default function HeroSection() {
               }}
             >
               <div className="flex -space-x-1.5 sm:-space-x-2">
-                <div className="relative h-6 w-6 shrink-0 overflow-hidden rounded-full border-2 border-card sm:h-8 sm:w-8">
-                  <Image
-                    src="https://images.unsplash.com/photo-1607346256330-dee7af15f7c5?w=64&h=64&fit=crop"
-                    alt="Mentor"
-                    fill
-                    className="object-cover object-top"
-                    sizes="32px"
-                  />
-                </div>
-                <div className="relative h-6 w-6 shrink-0 overflow-hidden rounded-full border-2 border-card sm:h-8 sm:w-8">
-                  <Image
-                    src="https://images.unsplash.com/photo-1654436200209-de489ed205df?w=64&h=64&fit=crop"
-                    alt="Mentor"
-                    fill
-                    className="object-cover object-top"
-                    sizes="32px"
-                  />
-                </div>
-                <div className="relative h-6 w-6 shrink-0 overflow-hidden rounded-full border-2 border-card sm:h-8 sm:w-8">
-                  <Image
-                    src="https://images.unsplash.com/photo-1535270732370-dd3188bab1da?w=64&h=64&fit=crop"
-                    alt="Mentor"
-                    fill
-                    className="object-cover object-top"
-                    sizes="32px"
-                  />
-                </div>
+                <img
+                  src="https://images.unsplash.com/photo-1607346256330-dee7af15f7c5?w=64&h=64&fit=crop"
+                  alt="Mentor"
+                  className="h-6 w-6 shrink-0 rounded-full border-2 border-card object-cover object-top sm:h-8 sm:w-8"
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1654436200209-de489ed205df?w=64&h=64&fit=crop"
+                  alt="Mentor"
+                  className="h-6 w-6 shrink-0 rounded-full border-2 border-card object-cover object-top sm:h-8 sm:w-8"
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1535270732370-dd3188bab1da?w=64&h=64&fit=crop"
+                  alt="Mentor"
+                  className="h-6 w-6 shrink-0 rounded-full border-2 border-card object-cover object-top sm:h-8 sm:w-8"
+                />
               </div>
               <p className="text-sm text-muted">
                 <span className="font-semibold text-heading">30+ mentors</span>

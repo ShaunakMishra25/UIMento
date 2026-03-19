@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useInView } from "@/src/hooks/useInView";
 
 const mentorPhotos = [
@@ -19,19 +18,13 @@ export default function TrustBand() {
         <div className={`flex flex-col items-center gap-6 sm:flex-row sm:justify-center sm:gap-12 transition-all duration-700 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
           <div className="flex items-center gap-3">
             <div className="flex -space-x-2">
-              {mentorPhotos.map((src, i) => (
-                <div
+              {mentorPhotos.map((src) => (
+                <img
                   key={src}
-                  className="relative h-9 w-9 shrink-0 overflow-hidden rounded-full border-2 border-accent-subtle transition-transform duration-300 hover:scale-110"
-                >
-                  <Image
-                    src={src}
-                    alt="Mentor"
-                    fill
-                    className="object-cover object-top"
-                    sizes="36px"
-                  />
-                </div>
+                  src={src}
+                  alt="Mentor"
+                  className="h-9 w-9 shrink-0 rounded-full border-2 border-accent-subtle object-cover object-top transition-transform duration-300 hover:scale-110"
+                />
               ))}
             </div>
             <span className="text-sm font-semibold text-heading">30+ mentors</span>

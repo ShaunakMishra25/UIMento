@@ -1,0 +1,1189 @@
+@import "tailwindcss";
+@config "../../tailwind.config.mjs";
+
+/* ============================================================
+   MENTOMANIA DESIGN SYSTEM
+   Single source of truth — never hardcode these values anywhere
+   ============================================================ */
+
+:root {
+
+  /* ── COLORS ──────────────────────────────────────────── */
+
+  /* Page — warm cream palette for premium feel */
+  --color-bg:              #F7F5F0;   /* warm cream — rich, inviting */
+  --color-bg-warm:          #FBF8F3;   /* lighter cream for gradients */
+  --color-bg-deep:          #F0EDE6;   /* deeper warm for contrast */
+  --color-card:            #FFFFFF;   /* card surfaces */
+  --color-surface-sunken:  #F0EDE8;   /* warm tint — input backgrounds */
+
+  /* Text hierarchy */
+  --color-heading:         #111827;   /* h1 h2 h3 — near-black */
+  --color-body:            #374151;   /* paragraphs, default text */
+  --color-muted:           #6B7280;   /* secondary text, labels */
+  --color-hint:            #9CA3AF;   /* placeholders, timestamps */
+
+  /* Brand accent — use ONCE per screen as primary CTA */
+  --color-accent:          #F59E0B;   /* amber-500 */
+  --color-accent-hover:    #D97706;   /* amber-600 */
+  --color-accent-subtle:   #FFFBEB;   /* amber-50 — tint backgrounds */
+  --color-accent-border:   #FDE68A;   /* amber-200 — tint borders */
+
+  /* Dark section — forest green (reference: fintech feature grid) */
+  --color-dark-bg:         #064E3B;   /* forest green */
+  --color-dark-text:       #ECFDF5;   /* light green tint */
+  --color-dark-muted:      #A7F3D0;   /* muted on dark */
+
+  /* Borders */
+  --color-border:          #E5E7EB;   /* default border */
+  --color-border-strong:   #D1D5DB;   /* hover border, emphasized */
+
+  /* Semantic */
+  --color-success:         #059669;   /* online, available, confirmed */
+  --color-success-subtle:  #D1FAE5;   /* success tint bg */
+  --color-danger:          #DC2626;   /* error, destructive */
+  --color-danger-subtle:   #FEE2E2;   /* error tint bg */
+  --color-warning:         #D97706;   /* warning states */
+
+  /* ── EXAM DOMAIN COLORS ──────────────────────────────── */
+  /* Used for mentor card badges, exam pills, avatar backgrounds */
+
+  --color-jee-bg:          #FFFBEB;
+  --color-jee-text:        #92400E;
+  --color-jee-border:      #FDE68A;
+
+  --color-upsc-bg:         #F5F3FF;
+  --color-upsc-text:       #5B21B6;
+  --color-upsc-border:     #DDD6FE;
+
+  --color-cat-bg:          #ECFDF5;
+  --color-cat-text:        #065F46;
+  --color-cat-border:      #A7F3D0;
+
+  --color-neet-bg:         #FEF2F2;
+  --color-neet-text:       #991B1B;
+  --color-neet-border:     #FECACA;
+
+  --color-ssc-bg:          #EFF6FF;
+  --color-ssc-text:        #1E40AF;
+  --color-ssc-border:      #BFDBFE;
+
+  --color-bank-bg:         #F0F9FF;
+  --color-bank-text:       #075985;
+  --color-bank-border:     #BAE6FD;
+
+  --color-clat-bg:         #FFF7ED;
+  --color-clat-text:       #9A3412;
+  --color-clat-border:     #FED7AA;
+
+  --color-startup-bg:      #F0FDF4;
+  --color-startup-text:    #166534;
+  --color-startup-border:  #BBF7D0;
+
+  /* ── TYPOGRAPHY ──────────────────────────────────────── */
+
+  --font-sans:             'Plus Jakarta Sans', system-ui, sans-serif;
+
+  /* Font sizes — 4pt grid aligned */
+  --text-xs:               12px;
+  --text-sm:               14px;
+  --text-base:             16px;
+  --text-lg:               20px;
+  --text-xl:               24px;
+  --text-2xl:              32px;
+  --text-3xl:              36px;
+  --text-4xl:              48px;
+  --text-5xl:              56px;
+  --text-6xl:              64px;
+
+  /* Line heights */
+  --leading-tight:         1.1;    /* headlines h1 h2 */
+  --leading-snug:          1.25;   /* h3 subheadings */
+  --leading-normal:        1.5;    /* UI labels */
+  --leading-relaxed:       1.65;   /* body paragraphs */
+
+  /* Letter spacing — confident, tight */
+  --tracking-tighter:      -0.04em;  /* h1 large headlines */
+  --tracking-tight:        -0.025em; /* h2 section headings — slightly tighter */
+  --tracking-normal:       0em;      /* body */
+  --tracking-wide:         0.05em;   /* labels */
+  --tracking-widest:       0.1em;    /* eyebrow uppercase labels */
+
+  /* Font weights */
+  --weight-normal:         400;
+  --weight-medium:         500;
+  --weight-semibold:       600;
+  --weight-bold:           700;
+  --weight-extrabold:      800;
+  --weight-black:          900;    /* use only for display/hero */
+
+  /* ── SPACING — 4pt grid ──────────────────────────────── */
+
+  --space-1:    4px;
+  --space-2:    8px;
+  --space-3:    12px;
+  --space-4:    16px;
+  --space-5:    20px;
+  --space-6:    24px;
+  --space-8:    32px;
+  --space-10:   40px;
+  --space-12:   48px;
+  --space-16:   64px;
+  --space-20:   80px;
+  --space-24:   96px;
+
+  /* ── BORDER RADIUS ───────────────────────────────────── */
+
+  --radius-sm:      6px;    /* badges, tags, chips */
+  --radius-md:      10px;   /* buttons, inputs */
+  --radius-lg:      16px;   /* cards */
+  --radius-xl:      24px;   /* large cards, hero container */
+  --radius-2xl:     32px;   /* premium cards, modals */
+  --radius-full:    9999px; /* avatars, status dots, toggles ONLY */
+
+  /* ── SHADOWS ─────────────────────────────────────────── */
+  /* Use border instead of shadow wherever possible */
+
+  --shadow-none:    none;
+  --shadow-xs:      0 1px 2px rgba(0, 0, 0, 0.05);   /* hover state only */
+  --shadow-sm:      0 1px 3px rgba(0, 0, 0, 0.08);   /* maximum allowed */
+
+  /* ── TRANSITIONS ─────────────────────────────────────── */
+
+  --transition-fast:    150ms ease;
+  --transition-base:    200ms ease;
+  --transition-slow:    300ms ease;
+
+  /* ── LAYOUT ──────────────────────────────────────────── */
+
+  --max-width:          1200px;   /* max-w-6xl */
+  --navbar-height:      64px;     /* h-16 */
+  --section-padding-x:  20px;     /* px-5 mobile */
+  --section-padding-y:  80px;     /* py-20 desktop */
+
+  /* ── COMPONENT TOKENS ────────────────────────────────── */
+
+  /* Navbar */
+  --navbar-bg:          var(--color-card);
+  --navbar-border:      var(--color-border);
+  --navbar-link:        var(--color-muted);
+  --navbar-link-hover:  var(--color-heading);
+
+  /* Buttons */
+  --btn-primary-bg:     var(--color-accent);
+  --btn-primary-text:   #FFFFFF;
+  --btn-primary-hover:  var(--color-accent-hover);
+  --btn-default-bg:     var(--color-heading);
+  --btn-default-text:   #FFFFFF;
+  --btn-default-hover:  #1F2937;
+  --btn-ghost-border:   var(--color-border);
+  --btn-ghost-text:     var(--color-body);
+  --btn-ghost-hover-bg: var(--color-surface-sunken);
+  --btn-height-sm:      36px;   /* h-9 */
+  --btn-height-md:      40px;   /* h-10 */
+  --btn-height-lg:      44px;   /* h-11 — minimum touch target */
+
+  /* Cards */
+  --card-bg:            var(--color-card);
+  --card-border:        var(--color-border);
+  --card-radius:        var(--radius-lg);
+  --card-padding:       var(--space-4);
+  --card-hover-border:  var(--color-border-strong);
+  --card-hover-shadow:  var(--shadow-xs);
+
+  /* Inputs */
+  --input-bg:           var(--color-card);
+  --input-border:       var(--color-border);
+  --input-border-focus: var(--color-accent);
+  --input-ring-focus:   rgba(245, 158, 11, 0.15);
+  --input-text:         var(--color-heading);
+  --input-placeholder:  var(--color-hint);
+  --input-height:       44px;   /* h-11 — minimum touch target */
+  --input-radius:       var(--radius-md);
+
+  /* Badges */
+  --badge-radius:       var(--radius-sm);
+  --badge-padding-x:    var(--space-2);
+  --badge-padding-y:    2px;
+
+  /* Stats bar */
+  --stat-number-size:   var(--text-2xl);
+  --stat-label-size:    var(--text-xs);
+
+  /* ── MOBILE FIRST BASE SIZES ─────────────────────────────── */
+  /* These are the DEFAULT (mobile) values.                      */
+  /* Larger screens override with sm: md: lg: xl: prefixes       */
+
+  /* Section padding — premium breathing room (120–160px ref) */
+  --section-px-mobile:    16px;    /* px-4 */
+  --section-px-tablet:    24px;    /* px-6 */
+  --section-px-desktop:   32px;    /* px-8 */
+  --section-py-mobile:    64px;    /* py-16 */
+  --section-py-tablet:    96px;    /* py-24 */
+  --section-py-desktop:   140px;   /* py-[140px] — generous whitespace */
+
+  /* Font sizes — confident, tight headlines */
+  --text-h1-mobile:       40px;    /* bolder hero */
+  --text-h1-tablet:       52px;    /* text-5xl+ */
+  --text-h1-desktop:      64px;    /* text-6xl — maximum impact */
+
+  --text-h2-mobile:       28px;    /* text-3xl on mobile */
+  --text-h2-tablet:       36px;    /* text-4xl on tablet */
+  --text-h2-desktop:      44px;    /* text-[44px] — section authority */
+
+  --text-h3-mobile:       20px;    /* text-xl on mobile */
+  --text-h3-desktop:      24px;    /* text-2xl on desktop */
+
+  /* Touch targets — minimum 44px always */
+  --touch-target:         44px;
+
+  /* Card padding — tighter on mobile */
+  --card-padding-mobile:  12px;    /* p-3 */
+  --card-padding-desktop: 16px;    /* p-4 */
+
+  /* Gap between cards */
+  --card-gap-mobile:      12px;    /* gap-3 */
+  --card-gap-desktop:     24px;    /* gap-6 */
+
+  /* Navbar */
+  --navbar-height-mobile: 56px;    /* h-14 */
+  --navbar-height-desktop:64px;    /* h-16 */
+}
+
+/* ================================================
+   TYPOGRAPHY SCALE — MentoMania
+   Use these classes instead of repeating Tailwind
+   combinations everywhere
+   ================================================ */
+
+/* Display — hero headlines only */
+.text-display {
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  color: var(--color-heading);
+}
+
+/* H1 — page level headings */
+.text-h1 {
+  font-size: clamp(1.875rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--color-heading);
+}
+
+/* H2 — section headings */
+.text-h2 {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--color-heading);
+}
+
+/* H3 — card titles, subsection headings */
+.text-h3 {
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  color: var(--color-heading);
+}
+
+/* H4 — small headings */
+.text-h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.4;
+  color: var(--color-heading);
+}
+
+/* Body large — intro paragraphs */
+.text-body-lg {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--color-body);
+}
+
+/* Body — default paragraphs */
+.text-body {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--color-body);
+}
+
+/* Body small — secondary content */
+.text-body-sm {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-body);
+}
+
+/* UI label — form labels, nav items */
+.text-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--color-body);
+}
+
+/* Eyebrow — section category labels */
+.text-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  line-height: 1;
+  color: var(--color-accent);
+}
+
+/* Eyebrow hero — slightly smaller for hero */
+.text-eyebrow-hero {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  line-height: 1;
+  color: var(--color-accent);
+}
+
+/* Caption — timestamps, meta info */
+.text-caption {
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--color-muted);
+}
+
+/* Muted — secondary text */
+.text-muted-body {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-muted);
+}
+
+/* Stat number — large display numbers */
+.text-stat {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--color-heading);
+}
+
+/* Stat label — below stat numbers */
+.text-stat-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-top: 0.5rem;
+}
+
+/* Accent text — highlighted words in headlines */
+.text-accent-word {
+  color: var(--color-accent);
+  font-style: normal;
+}
+
+/* ================================================
+   COMPONENT CLASSES — MentoMania
+   Reusable patterns extracted from components
+   ================================================ */
+
+/* ── BUTTONS ──────────────────────────────────── */
+
+/* Primary CTA — amber, one per screen */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  height: 2.75rem;
+  padding: 0 1.5rem;
+  background-color: var(--color-accent);
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  transition: background-color 150ms ease,
+              transform 100ms ease;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent-hover);
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+/* Default — near-black, most actions */
+.btn-default {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  height: 2.75rem;
+  padding: 0 1.25rem;
+  background-color: var(--color-heading);
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  transition: background-color 150ms ease,
+              transform 100ms ease;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.btn-default:hover {
+  background-color: #1f2937;
+}
+
+.btn-default:active {
+  transform: scale(0.98);
+}
+
+/* Ghost — outlined, secondary actions */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  height: 2.75rem;
+  padding: 0 1.25rem;
+  background-color: var(--color-card);
+  color: var(--color-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: background-color 150ms ease,
+              border-color 150ms ease,
+              transform 100ms ease;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.btn-ghost:hover {
+  background-color: var(--color-surface-sunken);
+  border-color: var(--color-border-strong);
+}
+
+.btn-ghost:active {
+  transform: scale(0.98);
+}
+
+/* Small button variant */
+.btn-sm {
+  height: 2.25rem;
+  padding: 0 1rem;
+  font-size: 0.75rem;
+}
+
+/* Full width on mobile */
+.btn-full-mobile {
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .btn-full-mobile {
+    width: auto;
+  }
+}
+
+/* ── CARDS ────────────────────────────────────── */
+
+/* Base card */
+.card {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--card-padding-mobile);
+  transition: box-shadow 200ms ease,
+              border-color 200ms ease;
+}
+
+@media (min-width: 640px) {
+  .card {
+    padding: var(--card-padding-desktop);
+  }
+}
+
+.card:hover {
+  box-shadow: var(--shadow-xs);
+  border-color: var(--color-border-strong);
+}
+
+/* Featured card — amber accent border */
+.card-featured {
+  background-color: var(--color-accent-subtle);
+  border-color: var(--color-accent-border);
+}
+
+/* Flat card — no hover effect */
+.card-flat {
+  transition: none;
+}
+
+.card-flat:hover {
+  box-shadow: none;
+  border-color: var(--color-border);
+}
+
+/* ── BADGES ───────────────────────────────────── */
+
+/* Base badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.625rem;
+  font-weight: 700;
+  padding: 0.125rem 0.5rem;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+/* Domain badges */
+.badge-jee {
+  background-color: var(--color-jee-bg);
+  color: var(--color-jee-text);
+  border: 1px solid var(--color-jee-border);
+}
+
+.badge-upsc {
+  background-color: var(--color-upsc-bg);
+  color: var(--color-upsc-text);
+  border: 1px solid var(--color-upsc-border);
+}
+
+.badge-cat {
+  background-color: var(--color-cat-bg);
+  color: var(--color-cat-text);
+  border: 1px solid var(--color-cat-border);
+}
+
+.badge-neet {
+  background-color: var(--color-neet-bg);
+  color: var(--color-neet-text);
+  border: 1px solid var(--color-neet-border);
+}
+
+.badge-ssc {
+  background-color: var(--color-ssc-bg);
+  color: var(--color-ssc-text);
+  border: 1px solid var(--color-ssc-border);
+}
+
+.badge-bank {
+  background-color: var(--color-bank-bg);
+  color: var(--color-bank-text);
+  border: 1px solid var(--color-bank-border);
+}
+
+.badge-clat {
+  background-color: var(--color-clat-bg);
+  color: var(--color-clat-text);
+  border: 1px solid var(--color-clat-border);
+}
+
+/* Status badge */
+.badge-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-success);
+}
+
+/* ── SECTIONS ─────────────────────────────────── */
+
+/* Standard section */
+.section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Alternate section background */
+.section-alt {
+  background-color: var(--color-card);
+}
+
+/* Dark section — final CTA */
+.section-dark {
+  background-color: var(--color-heading);
+}
+
+/* Section container */
+.section-container {
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .section-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Section header — eyebrow + heading + subtext */
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header-left {
+  text-align: left;
+  margin-bottom: 3rem;
+}
+
+/* Section subtext — below section headings */
+.section-subtext {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 36rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-muted);
+}
+
+/* ── AVATARS ──────────────────────────────────── */
+
+/* Base avatar */
+.avatar {
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.avatar-sm {
+  width: 1.75rem;
+  height: 1.75rem;
+  font-size: 0.625rem;
+}
+
+.avatar-md {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 0.75rem;
+}
+
+.avatar-lg {
+  width: 3rem;
+  height: 3rem;
+  font-size: 0.875rem;
+}
+
+/* Stacked avatars */
+.avatar-stack {
+  display: flex;
+}
+
+.avatar-stack .avatar {
+  border: 2px solid var(--color-bg);
+  margin-right: -0.5rem;
+}
+
+.avatar-stack .avatar:last-child {
+  margin-right: 0;
+}
+
+/* ── DIVIDERS ─────────────────────────────────── */
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: 0;
+}
+
+/* ── FLOATING CHIPS ───────────────────────────── */
+
+.chip {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 0.5rem 0.75rem;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ── INPUTS ───────────────────────────────────── */
+
+.input {
+  width: 100%;
+  height: var(--input-height);
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: var(--input-radius);
+  padding: 0 1rem;
+  font-size: 0.875rem;
+  color: var(--input-text);
+  transition: border-color 150ms ease,
+              box-shadow 150ms ease;
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--input-placeholder);
+}
+
+.input:focus {
+  border-color: var(--input-border-focus);
+  box-shadow: 0 0 0 3px var(--input-ring-focus);
+}
+
+/* ── LIVE INDICATOR ───────────────────────────── */
+
+.live-dot {
+  position: relative;
+  display: inline-flex;
+  width: 0.5rem;
+  height: 0.5rem;
+  flex-shrink: 0;
+}
+
+.live-dot::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background-color: var(--color-success);
+  opacity: 0.6;
+  animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.live-dot::after {
+  content: '';
+  position: relative;
+  display: inline-flex;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background-color: var(--color-success);
+}
+
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* ── BREAKPOINTS (reference only — use Tailwind classes) ─────
+   sm:  640px   large phones, small tablets
+   md:  768px   tablets portrait
+   lg:  1024px  tablets landscape, small laptops
+   xl:  1280px  desktops
+   2xl: 1536px  large desktops
+   ──────────────────────────────────────────────────────────── */
+
+/* Tailwind v4 theme — maps design tokens to utility classes */
+@theme inline {
+  --font-sans: var(--font-sans);
+  --color-heading: var(--color-heading);
+  --color-body: var(--color-body);
+  --color-muted: var(--color-muted);
+  --color-hint: var(--color-hint);
+  --color-accent: var(--color-accent);
+  --color-accent-hover: var(--color-accent-hover);
+  --color-accent-subtle: var(--color-accent-subtle);
+  --color-border: var(--color-border);
+  --color-border-strong: var(--color-border-strong);
+  --color-bg: var(--color-bg);
+  --color-surface: var(--color-bg);
+  --color-surface-sunken: var(--color-surface-sunken);
+  --color-card: var(--color-card);
+  --color-dark-bg: var(--color-dark-bg);
+  --color-dark-text: var(--color-dark-text);
+  --color-dark-muted: var(--color-dark-muted);
+  --color-success: var(--color-success);
+  --color-danger: var(--color-danger);
+  --color-jee-bg: var(--color-jee-bg);
+  --color-jee-text: var(--color-jee-text);
+  --color-upsc-bg: var(--color-upsc-bg);
+  --color-upsc-text: var(--color-upsc-text);
+  --color-cat-bg: var(--color-cat-bg);
+  --color-cat-text: var(--color-cat-text);
+  --color-neet-bg: var(--color-neet-bg);
+  --color-neet-text: var(--color-neet-text);
+  --color-neet-border: var(--color-neet-border);
+  --color-ssc-bg: var(--color-ssc-bg);
+  --color-ssc-text: var(--color-ssc-text);
+  --color-ssc-border: var(--color-ssc-border);
+  --color-bank-bg: var(--color-bank-bg);
+  --color-bank-text: var(--color-bank-text);
+  --color-bank-border: var(--color-bank-border);
+  --color-clat-bg: var(--color-clat-bg);
+  --color-clat-text: var(--color-clat-text);
+  --color-clat-border: var(--color-clat-border);
+  --color-jee-border: var(--color-jee-border);
+  --color-upsc-border: var(--color-upsc-border);
+  --color-cat-border: var(--color-cat-border);
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+  --radius-2xl: var(--radius-2xl);
+  --shadow-none: var(--shadow-none);
+  --shadow-xs: var(--shadow-xs);
+  --shadow-sm: var(--shadow-sm);
+  --spacing-btn-sm: var(--btn-height-sm);
+  --spacing-btn-md: var(--btn-height-md);
+  --spacing-btn-lg: var(--btn-height-lg);
+  --spacing-input: var(--input-height);
+  --spacing-navbar: var(--navbar-height);
+  --breakpoint-xs: 375px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+  --spacing-safe-bottom: env(safe-area-inset-bottom);
+  --spacing-safe-top: env(safe-area-inset-top);
+}
+
+/* ── BASE STYLES ─────────────────────────────────────────── */
+
+html {
+  background-color: var(--color-bg);
+  color: var(--color-body);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-body);
+  min-height: 100vh;
+}
+
+/* Warm gradient mesh — premium atmosphere (applied via main) */
+main {
+  background-image:
+    /* Top — soft amber glow */
+    radial-gradient(ellipse 140% 100% at 50% -30%, rgba(251, 248, 243, 0.9), transparent 55%),
+    /* Hero area — warm accent */
+    radial-gradient(ellipse 100% 60% at 50% 10%, rgba(245, 158, 11, 0.06), transparent 45%),
+    /* Bottom-left — warm cream pool */
+    radial-gradient(ellipse 90% 70% at 0% 100%, rgba(245, 235, 220, 0.5), transparent 50%),
+    /* Right — soft peachy warmth */
+    radial-gradient(ellipse 60% 80% at 100% 60%, rgba(253, 247, 237, 0.6), transparent 45%),
+    /* Base warmth — subtle cream wash */
+    linear-gradient(180deg, rgba(251, 248, 243, 0.4) 0%, transparent 30%, transparent 70%, rgba(240, 237, 230, 0.3) 100%);
+  background-color: var(--color-bg);
+}
+
+/* Premium grain overlay — warm paper texture */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* ── RESPONSIVE TYPOGRAPHY ───────────────────────────────── */
+
+h1 {
+  font-size: var(--text-h1-mobile);
+  font-weight: var(--weight-extrabold);
+  letter-spacing: var(--tracking-tighter);
+  line-height: var(--leading-tight);
+  color: var(--color-heading);
+}
+
+h2 {
+  font-size: var(--text-h2-mobile);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-snug);
+  color: var(--color-heading);
+}
+
+h3 {
+  font-size: var(--text-h3-mobile);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-snug);
+  color: var(--color-heading);
+}
+
+@media (min-width: 640px) {
+  h1 { font-size: var(--text-h1-tablet); }
+  h2 { font-size: var(--text-h2-tablet); }
+}
+
+@media (min-width: 1024px) {
+  h1 { font-size: var(--text-h1-desktop); }
+  h2 { font-size: var(--text-h2-desktop); }
+  h3 { font-size: var(--text-h3-desktop); }
+}
+
+p {
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--color-body);
+}
+
+/* ── FOCUS STYLES ────────────────────────────────────────── */
+
+*:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* ── SELECTION ───────────────────────────────────────────── */
+
+::selection {
+  background-color: rgba(245, 158, 11, 0.15);
+  color: var(--color-heading);
+}
+
+/* ── SCROLLBAR ───────────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-strong);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-muted);
+}
+
+/* ── LINKS ───────────────────────────────────────────────── */
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+/* ── MOBILE SPECIFIC RESETS ──────────────────────────────── */
+
+/* Prevent horizontal overflow on mobile */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Prevent text size adjustment on orientation change */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Remove tap highlight on mobile */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── TOUCH TARGET ENFORCEMENT ────────────────────────────── */
+/* Every interactive element must meet 44px minimum           */
+
+button,
+a,
+input,
+select,
+textarea,
+[role="button"] {
+  min-height: var(--touch-target);
+  touch-action: manipulation;  /* removes 300ms tap delay */
+}
+
+/* Exception: inline text links don't need 44px height */
+p a,
+span a {
+  min-height: unset;
+}
+
+/* ── MOBILE UTILITIES ────────────────────────────────────── */
+
+/* Safe area for notched phones (iPhone X and above) */
+.safe-padding-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.safe-padding-top {
+  padding-top: env(safe-area-inset-top);
+}
+
+/* Bottom nav safe area */
+.bottom-nav {
+  padding-bottom: calc(
+    var(--space-2) + env(safe-area-inset-bottom)
+  );
+}
+
+/* ── HERO ANIMATIONS (Zaplytic-style) ────────────────────── */
+@keyframes hero-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes hero-fade-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes hero-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ── SCROLL-REVEAL (Zaplytic-style) ──────────────────────── */
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes reveal-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-reveal-up {
+  opacity: 0;
+  animation: reveal-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-play-state: paused;
+}
+.animate-reveal-up.in-view {
+  animation-play-state: running;
+}
+
+.animate-reveal-scale {
+  animation: reveal-scale 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-play-state: paused;
+}
+.animate-reveal-scale.in-view {
+  animation-play-state: running;
+}
+
+/* Stagger delays for reveal */
+.reveal-delay-0 { animation-delay: 0ms; }
+.reveal-delay-1 { animation-delay: 80ms; }
+.reveal-delay-2 { animation-delay: 160ms; }
+.reveal-delay-3 { animation-delay: 240ms; }
+.reveal-delay-4 { animation-delay: 320ms; }
+.reveal-delay-5 { animation-delay: 400ms; }
+.reveal-delay-6 { animation-delay: 480ms; }
+.reveal-delay-7 { animation-delay: 560ms; }
+.reveal-delay-8 { animation-delay: 640ms; }
+
+/* ── MOBILE FIRST RULES — MentoMania ───────────────────────
+   1. Write base styles for 375px screen first
+   2. Add sm: overrides for 640px+
+   3. Add lg: overrides for 1024px+ (two column layouts start here)
+   4. Never use md: for layout columns — use lg: only
+   5. All buttons: w-full on mobile, w-auto on sm:
+   6. All font sizes: start small, scale up with sm: lg:
+   7. All padding: px-4 mobile, sm:px-6, lg:px-8
+   8. Two column grid: always grid-cols-1 lg:grid-cols-2
+   9. Three column grid: grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
+   10. Never use fixed pixel widths — use w-full with max-w-*
+   11. Images: always w-full h-auto — never fixed dimensions
+   12. Touch targets: minimum h-11 (44px) on all interactive elements
+   13. Right column (desktop only): hidden lg:block
+   14. Hero image/cards column: show BELOW text on mobile
+        becomes side-by-side only at lg:
+   ──────────────────────────────────────────────────────────── */
